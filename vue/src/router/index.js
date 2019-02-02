@@ -1,11 +1,14 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '@/components/login/login.vue'
+import Home from '@/components/page/home.vue'
 Vue.use(Router)
 
 var router = new Router({
   routes: [
-    {name:'lohin',path:'/login',component:Login}
+    {path:'/',redirect:'/home'},
+    {name:'login',path:'/login',component:Login},
+    {name:'home',path:'/home',component:Home}
   ]
 })
 router.beforeEach((to,from,next) =>{
