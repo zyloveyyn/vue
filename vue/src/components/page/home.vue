@@ -1,14 +1,17 @@
 <template>
   <el-container>
     <el-header>
-        <Headers />
+      <!-- 头部区域 -->
+      <Headers/>
     </el-header>
     <el-container>
       <el-aside width="200px">
-        <Sidebar />
+        <!-- 侧边栏 -->
+        <Sidebar/>
       </el-aside>
       <el-main>
-        
+        <!-- 渲染内容 -->
+        <router-view />
       </el-main>
     </el-container>
   </el-container>
@@ -18,11 +21,11 @@
 import Headers from '@/layout/headers.vue'
 import Sidebar from '@/layout/sidebar.vue'
 export default {
-    components:{
-        Headers,
-        Sidebar
-    }
-};
+  components: {
+    Headers,
+    Sidebar
+  },
+}
 </script>
 
 <style>
