@@ -6,14 +6,20 @@ import router from './router'
 import ElementUI from 'element-ui'
 import MyBread from '@/layout/bread.vue'
 import myaxios from '@/assets/js/myaxios.js'
+import moment from 'moment'
 import 'element-ui/lib/theme-chalk/index.css'
 import '@/assets/css/index.css'
+
+
 
 
 Vue.use(myaxios)
 Vue.use(ElementUI)
 /* eslint-disable no-new */
 Vue.component(MyBread.name, MyBread)
+Vue.filter('dateformat', function(value) {
+  return moment(value).format('YYYY-MM-DD hh:mm:ss')
+})
 Vue.config.productionTip = false
 new Vue({
   el: '#app',
@@ -21,3 +27,4 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+ 
